@@ -2,17 +2,19 @@
 <html>
 	<head>
 		<title>simonSaysJS</title>
-		<link href="css/styles.css" rel="stylesheet">
+		<link href='css/styles.css' rel='stylesheet'>
 		<script src='js/lib/jquery-1.11.3.min.js'></script>
-		<script src="js/app.js"></script>
+		<script src='js/src/ui.js'></script>
+		<script src='js/src/game.js'></script>
 	</head>
 	<body>
 		<div class="page-container">
+			<h1>Simon Says</h1>
 			<ul class="game-container">
-				<li class="game-piece green"></li>
-				<li class="game-piece red"></li>
-				<li class="game-piece yellow"></li>
-				<li class="game-piece blue"></li>
+				<li class="game-piece game-piece--top-left"></li>
+				<li class="game-piece game-piece--top-right"></li>
+				<li class="game-piece game-piece--bottom-left"></li>
+				<li class="game-piece game-piece--bottom-right"></li>
 			</ul>
 			<button name="button new-game">New Game</button>
 			<div class="game-score"></div>

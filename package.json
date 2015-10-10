@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/tpgmartin/simonSaysJS/issues"
   },
-  "homepage": "https://github.com/tpgmartin/simonSaysJS"
+  "homepage": "https://github.com/tpgmartin/simonSaysJS",
+  "devDependencies": {
+    "eslint": "^1.6.0",
+    "mocha": "^2.3.3"
+  }
 }
