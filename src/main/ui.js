@@ -3,8 +3,8 @@ var Game = require('./game.js');
 
 $(function() {
     var score = 0;
-
-    Game.flashGamePiece();
+    var correctSequence = [];
+    var userSelected;
 
     $('.game-piece').click(function() {
         var elem = $(this);
@@ -12,9 +12,12 @@ $(function() {
         setTimeout(function () {
             elem.removeClass('game-piece__click');
         }, 100);
+
+        userSelected = elem[0];
+        Game.checkUserCorrect(userSelected, correctSequence);
     });
 
     $('.new-game-btn').click(function() {
-        alert('New game started');
+        Game.flashGamePiece(correctSequence);
     });
 });
