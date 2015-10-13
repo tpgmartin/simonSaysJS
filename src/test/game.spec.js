@@ -1,18 +1,20 @@
 'use strict';
 
-var Game = require('../main/game.js');
-var assert = require('assert');
+var Game = require('../main/game.js'),
+    assert = require('assert'),
+    chai = require('chai'),
+    sinon = require('sinon');
 
 describe('Game', function () {
     describe('flashGamePiece', function () {
-        it('should ', function () {
+        it('should choose a game piece randomly', function () {
             var subject = new Game();
 
             var outcome = subject.flashGamePiece();
 
-            console.log(outcome);
+            var isFlashed = false;
 
-            assert.equal(outcome.direction, robot.direction);
+            assert.equal(true, isFlashed);
         });
     });
 });

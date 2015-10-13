@@ -1,7 +1,10 @@
-$ = require('jquery');
+var $ = require('jquery');
+var Game = require('./game.js');
 
 $(function() {
-    //var game = new Game();
+    var score = 0;
+
+    Game.flashGamePiece();
 
     $('.game-piece').click(function() {
         var elem = $(this);
