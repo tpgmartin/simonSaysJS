@@ -5,13 +5,17 @@ function flashGamePiece (correctSequence) {
     var index = Math.floor(Math.random()*4);
     var selected = gamePieces[index];
 
-    $(selected).toggleClass('game-piece__click');
-    setTimeout(function () {
-        $(selected).removeClass('game-piece__click');
-    }, 100);
-
     correctSequence.push(selected);
-    return correctSequence;
+
+    correctSequence.map(function (el, index) {
+            setTimeout(function () {
+                $(el).toggleClass('game-piece__click');
+                setTimeout(function () {
+                    $(el).removeClass('game-piece__click');
+                }, (index+1)*300);
+            }, (index+1)*300);
+    });
+
 }
 
 function flashSelectedPiece (elem) {
@@ -25,10 +29,9 @@ function flashSelectedPiece (elem) {
 
 function checkUserCorrect (userSelected, correctSequence, score) {
     if (userSelected === correctSequence[0]) {
-        console.log(score);
         score += 1;
         updateScore(score);
-        flashGamePiece();
+        flashGamePiece(correctSequence);
     } else {
         alert('Game Over!');
     }
