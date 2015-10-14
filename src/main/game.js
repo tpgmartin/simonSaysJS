@@ -12,18 +12,35 @@ function flashGamePiece (correctSequence) {
 
     correctSequence.push(selected);
     return correctSequence;
-
 }
 
-function checkUserCorrect (userSelected, correctSequence) {
+function flashSelectedPiece (elem) {
+    elem.toggleClass('game-piece__click');
+    setTimeout(function () {
+        elem.removeClass('game-piece__click');
+    }, 100);
+
+    return elem[0];
+}
+
+function checkUserCorrect (userSelected, correctSequence, score) {
     if (userSelected === correctSequence[0]) {
+        console.log(score);
+        score += 1;
+        updateScore(score);
         flashGamePiece();
     } else {
         alert('Game Over!');
     }
 }
 
+function updateScore (score) {
+    $('.game-score').text('Game score: ' + score);
+}
+
 module.exports = {
+    updateScore: updateScore,
     flashGamePiece: flashGamePiece,
+    flashSelectedPiece: flashSelectedPiece,
     checkUserCorrect: checkUserCorrect
 };
