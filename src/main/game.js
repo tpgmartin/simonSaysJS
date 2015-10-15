@@ -27,9 +27,12 @@ function flashSelectedPiece (elem) {
     return elem[0];
 }
 
-function checkUserCorrect (userSelected, correctSequence, score) {
-    if (userSelected === correctSequence[0]) {
+function checkUserCorrect (userSelected, correctSequence, score, click) {
+    if (userSelected === correctSequence[click] && click < correctSequence.length-1) {
+        click += 1;
+    } else if (userSelected === correctSequence[click]) {
         score += 1;
+        click = 0;
         updateScore(score);
         flashGamePiece(correctSequence);
     } else {
