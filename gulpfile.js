@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 gulp.task('browserify', function () {
 
-    return gulp.src(['./src/**/*.js', '!./src/test/*.js'])
+    return gulp.src('./src/*.js')
         .pipe(browserify())
         .pipe(uglify())
         .pipe(concat('all.js'))
